@@ -79,6 +79,37 @@ def _cleanup_tasks(now: float) -> None:
             _thread_to_task.pop(thread_id, None)
 
 
+def _detect_disallowed_user_intent(text: str) -> str | None:
+    t = (text or "").strip().lower()
+    if not t:
+        return None
+    if any(v in t for v in ("删", "删除", "清空", "格式化", "抹掉", "破坏")):
+        if ("c盘" in t) or ("c:" in t) or ("系统盘" in t) or ("system32" in t) or ("c:\\windows" in t):
+            return "system_damage"
+        if ("磁盘" in t) or ("硬盘" in t) or ("分区" in t):
+            if any(x in t for x in ("全部", "所有", "整盘", "整块", "整个")):
+                return "system_damage"
+    patterns = [
+        (r"(删|删除|清除|抹掉|格式化|破坏).*(系统文件|系统|windows|system32|注册表|启动项|引导|boot|c:\\\\windows)", "system_damage"),
+        (r"(删|删除|清空|格式化|抹掉|破坏).*(c盘|c:\s*盘|c:|系统盘|系统分区).*(文件|内容|数据)?", "system_damage"),
+        (r"(清空|格式化|抹掉|破坏).*(磁盘|硬盘|分区).*(所有|全部|整块|整盘)?", "system_damage"),
+        (r"(rm\s+-rf\s+/|del\s+/f\s+/s\s+/q|format\s+c:|rmdir\s+/s\s+/q).*(/|c:)", "system_damage"),
+        (r"(写|生成|给我).*(rm\s+-rf|del\s+/f|format\s+c:|powershell).*(删除|清空|破坏)", "system_damage"),
+    ]
+    for p, code in patterns:
+        if re.search(p, t, flags=re.IGNORECASE):
+            return code
+    return None
+
+
+def _content_safety_refusal_message() -> str:
+    return (
+        "抱歉，我不能帮助删除/清空/格式化磁盘，或删除系统文件/系统关键组件。\n\n"
+        "如果你是想释放磁盘空间或解决系统问题，可以说明你的目标（清理空间/卸载软件/修复系统）与系统版本，我可以给安全方案。"
+    )
+
+
+
 def _build_messages(history: Optional[List[Dict[str, str]]], message: str) -> list:
     messages: list = []
     if history:
@@ -108,6 +139,33 @@ async def chat_endpoint(request: ChatRequest):
     try:
         logger.info(f"Received request from thread {request.thread_id}: {request.message}")
         t0 = time.time()
+
+        if os.getenv("ENABLE_CONTENT_SAFETY", "1") == "1":
+            reason = _detect_disallowed_user_intent(request.message or "")
+            if reason:
+                meta = {
+                    "endpoint": "/chat",
+                    "thread_id": request.thread_id,
+                    "route": "safety",
+                    "route_method": "content_policy",
+                    "pending": False,
+                    "task_id": None,
+                    "blocked": True,
+                    "block_reason": reason,
+                    "latency_ms": int((time.time() - t0) * 1000),
+                    "graph_ms": 0,
+                    "message_len": len(request.message or ""),
+                }
+                _append_event({"ts": time.time(), **meta})
+                return ChatResponse(
+                    response=_content_safety_refusal_message(),
+                    image_url=None,
+                    pending=False,
+                    task_id=None,
+                    code=None,
+                    meta=meta,
+                    risk_report=None,
+                )
         
         messages = _build_messages(request.history, request.message)
 

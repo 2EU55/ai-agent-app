@@ -1,2 +1,0 @@
-C:\Users\czy\PycharmProjects\AI_Workspace\ai_intern_bootcamp\rag_eval_outputs_dbg\rag_eval_20260211_161129_486.json
-C:\Users\czy\PycharmProjects\AI_Workspace\ai_intern_bootcamp\rag_eval_outputs_dbg\rag_eval_20260211_161129_486.md

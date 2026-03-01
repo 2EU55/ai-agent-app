@@ -30,3 +30,9 @@ AI_Intern_Bootcamp/events_summary.json
 .idea/
 *.pyc
 
+# RAG & Eval Outputs
+**/.chroma_eval/
+**/rag_eval_outputs/
+**/rag_eval_outputs_dbg/
+**/rag_gen_eval_outputs/
+

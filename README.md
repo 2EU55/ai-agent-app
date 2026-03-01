@@ -1,5 +1,12 @@
 # 多智能体 AI 助手（Agent / RAG / HITL 安全执行）
 
+[![Build Status](https://github.com/2EU55/ai-agent-app/actions/workflows/eval.yml/badge.svg)](https://github.com/2EU55/ai-agent-app/actions/workflows/eval.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+![Python](https://img.shields.io/badge/python-3.11+-blue.svg)
+![LangGraph](https://img.shields.io/badge/LangGraph-0.2.70-orange.svg)
+![Streamlit](https://img.shields.io/badge/Streamlit-1.42-red.svg)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.115-green.svg)
+
 一个可运行、可回归、可观测的 LLM 应用工程项目：支持多智能体路由、数据分析出图、政策问答（带证据引用）、以及执行前安全确认。
 
 ## 快速验证

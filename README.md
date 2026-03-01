@@ -12,7 +12,10 @@
 ## 快速验证
 
 ```bash
+# 进入项目目录
 cd AI_Intern_Bootcamp
+
+# 启动 Docker 容器
 docker compose up --build
 ```
 
@@ -32,12 +35,12 @@ docker compose up --build
 
 ## 项目结构
 
-- `data_agent_app.py`：Streamlit 前端（消息展示、pending 预览、确认按钮、图片展示）
-- `server.py`：FastAPI 后端（/chat、/confirm、静态文件、events 落盘）
-- `multi_agent_graph.py`：LangGraph 编排（router/analyst/expert/general）
-- `rag_tool.py` / `refusal_rules.py` / `rag_app.py`：RAG 检索与拒答门控
-- `run_eval*.py` / `eval_cases.json`：回归评测（离线/本地/端到端）
-- `trace_events.py`：blocked 配对追踪（/chat pending → /confirm）
+- `AI_Intern_Bootcamp/data_agent_app.py`：Streamlit 前端（消息展示、pending 预览、确认按钮、图片展示）
+- `AI_Intern_Bootcamp/server.py`：FastAPI 后端（/chat、/confirm、静态文件、events 落盘）
+- `AI_Intern_Bootcamp/multi_agent_graph.py`：LangGraph 编排（router/analyst/expert/general）
+- `AI_Intern_Bootcamp/rag_tool.py` / `refusal_rules.py` / `rag_app.py`：RAG 检索与拒答门控
+- `AI_Intern_Bootcamp/run_eval*.py` / `eval_cases.json`：回归评测（离线/本地/端到端）
+- `AI_Intern_Bootcamp/trace_events.py`：blocked 配对追踪（/chat pending → /confirm）
 
 ## 截图
 
@@ -80,6 +83,7 @@ docker compose up --build
 
 **离线检查（不走模型）：**
 ```bash
+# 请确保在项目根目录下运行
 python -u AI_Intern_Bootcamp/run_eval_offline.py
 ```
 
@@ -110,12 +114,16 @@ python -u AI_Intern_Bootcamp/run_eval.py --auto-server --timeout 240
 
 ---
 
-## 90 秒自我介绍稿（AI 应用工程 / 杭州）
+## 关于开发者 (About Developer)
 
-我叫曹紫阳，是集美大学诚毅学院数据科学与大数据技术专业，2026 年 6 月毕业。我主攻 AI 应用工程方向，重点做 Agent/RAG 的工程化落地。
+本项目由曹紫阳开发（2026 届，集美大学诚毅学院数据科学与大数据技术专业）。
 
-我做了一个多智能体 AI 助手项目：前端 Streamlit，后端 FastAPI 提供 `/chat` 和 `/confirm`，内部用 LangGraph 编排 Router/Analyst/Expert 三条路径。Analyst 负责数据分析和画图，我把它做成两段式执行：第一次 `/chat` 只返回 pending 代码预览、task_id 和风险报告，用户确认后才走 `/confirm` 执行；同时做了前端禁用确认和后端 403 强拦截，覆盖字符串规则和 AST 规则两类风险，保证危险代码不会被执行并且可审计。
+主攻 AI 应用工程方向，重点探索 Agent/RAG 的工程化落地。本项目旨在展示多智能体系统的路由分发、HITL 安全执行流程以及完整的回归评测体系。
 
-Expert 负责政策问答，我把 RAG 做成“证据不足就拒答”的三道门：主题覆盖、分数阈值、缺字段检测，并且最终回答强制标注引用片段编号，减少幻觉。工程上我建立了离线/本地/端到端三种回归评测，评测产物可复现；同时把请求事件落盘并汇总，写了 trace 脚本按 `thread_id` 把 `/chat` pending 和 `/confirm` 配对，能快速定位 blocked 的根因。
+**核心贡献：**
+- **架构设计**：LangGraph 多智能体编排（Router/Analyst/Expert）。
+- **安全机制**：前端禁用确认 + 后端 AST/正则双重拦截。
+- **质量保障**：构建了离线/本地/端到端三层回归评测体系，确保迭代稳定性。
+- **可观测性**：实现了请求事件全链路追踪与可视化汇总。
 
-我希望在杭州找 AI 应用工程师/LLM 应用工程师岗位，愿意从外包/小厂/初创做起，快速成长并持续迭代作品。
+期待在杭州寻找 AI 应用工程师/LLM 应用工程师岗位，愿意从外包/小厂/初创做起，快速成长并持续迭代作品。

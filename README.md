@@ -35,13 +35,13 @@ docker compose up --build
 ## 截图
 
 1. **数据分析出图（Analyst）**
-   *(此处应有截图)*
+   ![数据分析出图](docs/images/demo_plot.png)
 
 2. **政策问答可追溯（Expert：回答标注“来源：片段X”）**
-   *(此处应有截图)*
+   ![政策问答](docs/images/demo_rag_citation.png)
 
 3. **执行安全门禁（HITL：危险代码确认阶段被拦截）**
-   *(此处应有截图)*
+   ![安全拦截](docs/images/demo_blocked.png)
 
 ## 关键特性
 

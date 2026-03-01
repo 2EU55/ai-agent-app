@@ -1,0 +1,302 @@
+[
+  {
+    "id": "A01",
+    "category": "answerable",
+    "question": "出差住宿标准是多少？",
+    "gold_keywords": ["600 元", "400 元", "住宿标准"]
+  },
+  {
+    "id": "A02",
+    "category": "answerable",
+    "question": "一线城市出差住宿上限是多少？",
+    "gold_keywords": ["一线城市", "600 元", "住宿标准"]
+  },
+  {
+    "id": "A03",
+    "category": "answerable",
+    "question": "其他城市出差住宿上限是多少？",
+    "gold_keywords": ["其他城市", "400 元", "住宿标准"]
+  },
+  {
+    "id": "A04",
+    "category": "answerable",
+    "question": "出差期间每天餐饮补贴多少？",
+    "gold_keywords": ["餐饮补贴", "100 元", "每天"]
+  },
+  {
+    "id": "A05",
+    "category": "answerable",
+    "question": "高铁出差报销标准是什么？",
+    "gold_keywords": ["高铁二等座", "全额报销"]
+  },
+  {
+    "id": "A06",
+    "category": "answerable",
+    "question": "出差坐飞机需要什么条件？",
+    "gold_keywords": ["飞机", "提前审批", "经济舱", "全额报销"]
+  },
+  {
+    "id": "A07",
+    "category": "answerable",
+    "question": "公司每月什么时候发工资？",
+    "gold_keywords": ["发薪日", "每月 10 日", "10 日"]
+  },
+  {
+    "id": "A08",
+    "category": "answerable",
+    "question": "年终奖什么时候发放？",
+    "gold_keywords": ["年终奖", "春节前", "1 周", "发放"]
+  },
+  {
+    "id": "A09",
+    "category": "answerable",
+    "question": "入职满一年年假有几天？",
+    "gold_keywords": ["年假", "5 天", "入职满一年"]
+  },
+  {
+    "id": "A10",
+    "category": "answerable",
+    "question": "病假期间工资怎么发？",
+    "gold_keywords": ["病假", "80%", "基本工资"]
+  },
+  {
+    "id": "U01",
+    "category": "unanswerable",
+    "question": "公司是否允许远程办公？",
+    "gold_keywords": []
+  },
+  {
+    "id": "U02",
+    "category": "unanswerable",
+    "question": "加班费怎么算？",
+    "gold_keywords": []
+  },
+  {
+    "id": "U03",
+    "category": "unanswerable",
+    "question": "试用期多久？",
+    "gold_keywords": []
+  },
+  {
+    "id": "U04",
+    "category": "unanswerable",
+    "question": "公司地址在哪里？",
+    "gold_keywords": []
+  },
+  {
+    "id": "U05",
+    "category": "unanswerable",
+    "question": "可以带宠物来上班吗？",
+    "gold_keywords": []
+  },
+  {
+    "id": "U06",
+    "category": "unanswerable",
+    "question": "公司提供股票期权吗？",
+    "gold_keywords": []
+  },
+  {
+    "id": "U07",
+    "category": "unanswerable",
+    "question": "公司是否有交通班车？",
+    "gold_keywords": []
+  },
+  {
+    "id": "U08",
+    "category": "unanswerable",
+    "question": "员工体检政策是什么？",
+    "gold_keywords": []
+  },
+  {
+    "id": "U09",
+    "category": "unanswerable",
+    "question": "公司是否提供住房公积金？",
+    "gold_keywords": []
+  },
+  {
+    "id": "U10",
+    "category": "unanswerable",
+    "question": "公司有哪些团建活动？",
+    "gold_keywords": []
+  },
+  {
+    "id": "F01",
+    "category": "field_mismatch",
+    "question": "年终奖发几个月？",
+    "gold_keywords": []
+  },
+  {
+    "id": "F02",
+    "category": "field_mismatch",
+    "question": "年终奖一般发多少个月工资？",
+    "gold_keywords": []
+  },
+  {
+    "id": "F03",
+    "category": "field_mismatch",
+    "question": "年终奖通常是几个月？",
+    "gold_keywords": []
+  },
+  {
+    "id": "F04",
+    "category": "field_mismatch",
+    "question": "年终奖相当于几个月薪资？",
+    "gold_keywords": []
+  },
+  {
+    "id": "F05",
+    "category": "field_mismatch",
+    "question": "年终奖最少能拿几个月？",
+    "gold_keywords": []
+  },
+  {
+    "id": "F06",
+    "category": "field_mismatch",
+    "question": "年终奖最多能拿几个月？",
+    "gold_keywords": []
+  },
+  {
+    "id": "F07",
+    "category": "field_mismatch",
+    "question": "年终奖按几个月算？",
+    "gold_keywords": []
+  },
+  {
+    "id": "F08",
+    "category": "field_mismatch",
+    "question": "年终奖有几个月的标准吗？",
+    "gold_keywords": []
+  },
+  {
+    "id": "F09",
+    "category": "field_mismatch",
+    "question": "年终奖一般是几个月薪水？",
+    "gold_keywords": []
+  },
+  {
+    "id": "F10",
+    "category": "field_mismatch",
+    "question": "年终奖能拿几个月工资？",
+    "gold_keywords": []
+  },
+  {
+    "id": "A11",
+    "category": "answerable",
+    "question": "餐饮补贴标准是多少？",
+    "gold_keywords": ["餐饮补贴", "100 元"]
+  },
+  {
+    "id": "A12",
+    "category": "answerable",
+    "question": "发薪日是每月几号？",
+    "gold_keywords": ["发薪日", "10 日"]
+  },
+  {
+    "id": "A13",
+    "category": "answerable",
+    "question": "病假工资按多少比例发？",
+    "gold_keywords": ["病假", "80%"]
+  },
+  {
+    "id": "A14",
+    "category": "answerable",
+    "question": "出差飞机票怎么报销？",
+    "gold_keywords": ["飞机", "提前审批", "经济舱", "全额报销"]
+  },
+  {
+    "id": "A15",
+    "category": "answerable",
+    "question": "年假天数是多少？（入职满一年）",
+    "gold_keywords": ["年假", "5 天"]
+  },
+  {
+    "id": "A16",
+    "category": "answerable",
+    "question": "年终奖大概什么时候发？",
+    "gold_keywords": ["年终奖", "春节前"]
+  },
+  {
+    "id": "U11",
+    "category": "unanswerable",
+    "question": "公司的法定节假日加班怎么补偿？",
+    "gold_keywords": []
+  },
+  {
+    "id": "U12",
+    "category": "unanswerable",
+    "question": "公司提供宿舍吗？有几人间？",
+    "gold_keywords": []
+  },
+  {
+    "id": "U13",
+    "category": "unanswerable",
+    "question": "可以跨城市远程办公吗？每周几天？",
+    "gold_keywords": []
+  },
+  {
+    "id": "U14",
+    "category": "unanswerable",
+    "question": "公司有下午茶补贴吗？每人每月多少？",
+    "gold_keywords": []
+  },
+  {
+    "id": "U15",
+    "category": "unanswerable",
+    "question": "公司有带薪育儿假吗？多久？",
+    "gold_keywords": []
+  },
+  {
+    "id": "U16",
+    "category": "unanswerable",
+    "question": "公司有补充商业保险吗？报销比例多少？",
+    "gold_keywords": []
+  },
+  {
+    "id": "U17",
+    "category": "unanswerable",
+    "question": "公司有晋升通道吗？多久可以晋升一次？",
+    "gold_keywords": []
+  },
+  {
+    "id": "U18",
+    "category": "unanswerable",
+    "question": "公司对迟到早退怎么扣款？扣多少？",
+    "gold_keywords": []
+  },
+  {
+    "id": "F11",
+    "category": "field_mismatch",
+    "question": "公司地址具体到门牌号是多少？",
+    "gold_keywords": []
+  },
+  {
+    "id": "F12",
+    "category": "field_mismatch",
+    "question": "工资具体几点到账？",
+    "gold_keywords": []
+  },
+  {
+    "id": "F13",
+    "category": "field_mismatch",
+    "question": "餐饮补贴一个月总共能领多少？",
+    "gold_keywords": []
+  },
+  {
+    "id": "F14",
+    "category": "field_mismatch",
+    "question": "年假未休可以提现吗？按多少钱一天算？",
+    "gold_keywords": []
+  },
+  {
+    "id": "F15",
+    "category": "field_mismatch",
+    "question": "病假最多能请几天？",
+    "gold_keywords": []
+  },
+  {
+    "id": "F16",
+    "category": "field_mismatch",
+    "question": "出差住宿标准是否含早餐？",
+    "gold_keywords": []
+  }
+]

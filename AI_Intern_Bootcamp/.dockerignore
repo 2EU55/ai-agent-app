@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.log
+.chroma_rag/
+rag_eval_outputs/
+rag_gen_eval_outputs/
+output.png
+api_events.jsonl
+events_summary.json
+eval_report.json
+eval_summary.json
+eval_failures.json
+.env
+pylib/

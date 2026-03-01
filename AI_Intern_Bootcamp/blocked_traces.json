@@ -1,0 +1,122 @@
+[
+  {
+    "thread_id": "eval_security_block_dangerous_confirm_1772008350",
+    "confirm": {
+      "ts": 1772008350.9350014,
+      "confirm_action": "confirm",
+      "blocked": true,
+      "block_reason": "dangerous_code",
+      "risk_match_count": 1
+    },
+    "chat": {
+      "ts": 1772008350.933478,
+      "route": "analyst",
+      "route_method": "security_test",
+      "task_id": "41a960c6e96243ccaaf7890105f2faf4",
+      "code_sha256": "58d8a64260b9ed4edd89e0d3b0c66ca31b92621d01934e449138bef25da6198a",
+      "risk_dangerous": true,
+      "risk_match_count": 1,
+      "code_len": 30
+    }
+  },
+  {
+    "thread_id": "eval_security_block_dangerous_confirm_1772009002",
+    "confirm": {
+      "ts": 1772009002.3985035,
+      "confirm_action": "confirm",
+      "blocked": true,
+      "block_reason": "dangerous_code",
+      "risk_match_count": 1
+    },
+    "chat": {
+      "ts": 1772009002.3969975,
+      "route": "analyst",
+      "route_method": "security_test",
+      "task_id": "3354389512cd4200a5c53a5902241e24",
+      "code_sha256": "58d8a64260b9ed4edd89e0d3b0c66ca31b92621d01934e449138bef25da6198a",
+      "risk_dangerous": true,
+      "risk_match_count": 1,
+      "code_len": 30
+    }
+  },
+  {
+    "thread_id": "eval_security_block_dangerous_confirm_1772009277",
+    "confirm": {
+      "ts": 1772009278.0031831,
+      "confirm_action": "confirm",
+      "blocked": true,
+      "block_reason": "dangerous_code",
+      "risk_match_count": 1
+    },
+    "chat": {
+      "ts": 1772009278.0031831,
+      "route": "analyst",
+      "route_method": "security_test",
+      "task_id": "d169e5a4d7aa4024be0680deea64cb92",
+      "code_sha256": "58d8a64260b9ed4edd89e0d3b0c66ca31b92621d01934e449138bef25da6198a",
+      "risk_dangerous": true,
+      "risk_match_count": 1,
+      "code_len": 30
+    }
+  },
+  {
+    "thread_id": "eval_security_block_dangerous_confirm_1772011175",
+    "confirm": {
+      "ts": 1772011175.7324882,
+      "confirm_action": "confirm",
+      "blocked": true,
+      "block_reason": "ast_disallowed",
+      "risk_match_count": 4
+    },
+    "chat": {
+      "ts": 1772011175.7303548,
+      "route": "analyst",
+      "route_method": "security_test",
+      "task_id": "465170ddbc684c7b937d52f0c3298ec2",
+      "code_sha256": "58d8a64260b9ed4edd89e0d3b0c66ca31b92621d01934e449138bef25da6198a",
+      "risk_dangerous": true,
+      "risk_match_count": 4,
+      "code_len": 30
+    }
+  },
+  {
+    "thread_id": "eval_security_block_dangerous_confirm_1772271102",
+    "confirm": {
+      "ts": 1772271102.285473,
+      "confirm_action": "confirm",
+      "blocked": true,
+      "block_reason": "ast_disallowed",
+      "risk_match_count": 4
+    },
+    "chat": {
+      "ts": 1772271102.2841883,
+      "route": "analyst",
+      "route_method": "security_test",
+      "task_id": "57e2df59eaeb47919b79f57b19a515e2",
+      "code_sha256": "58d8a64260b9ed4edd89e0d3b0c66ca31b92621d01934e449138bef25da6198a",
+      "risk_dangerous": true,
+      "risk_match_count": 4,
+      "code_len": 30
+    }
+  },
+  {
+    "thread_id": "eval_security_block_dangerous_confirm_1772271386",
+    "confirm": {
+      "ts": 1772271386.5297174,
+      "confirm_action": "confirm",
+      "blocked": true,
+      "block_reason": "ast_disallowed",
+      "risk_match_count": 4
+    },
+    "chat": {
+      "ts": 1772271386.528187,
+      "route": "analyst",
+      "route_method": "security_test",
+      "task_id": "bb65837aa8aa4904b27686dae8e16671",
+      "code_sha256": "58d8a64260b9ed4edd89e0d3b0c66ca31b92621d01934e449138bef25da6198a",
+      "risk_dangerous": true,
+      "risk_match_count": 4,
+      "code_len": 30
+    }
+  }
+]

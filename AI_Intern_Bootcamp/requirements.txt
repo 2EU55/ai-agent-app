@@ -1,0 +1,15 @@
+langchain
+langchain-community
+langchain-core
+langchain-openai
+langchain-experimental
+langgraph
+chromadb
+pandas
+matplotlib
+streamlit
+fastapi
+uvicorn
+python-dotenv
+loguru
+openpyxl

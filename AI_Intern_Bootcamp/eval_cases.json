@@ -1,0 +1,149 @@
+{
+  "base_url": "http://localhost:8000",
+  "cases": [
+    {
+      "id": "general_hello",
+      "category": "general",
+      "message": "你好，你是谁？你能做什么？",
+      "expect_contains_all": ["1) 我是谁：", "2) 我能做数据：", "3) 我能查政策：", "4) 你可以这样问："]
+    },
+    {
+      "id": "general_hi",
+      "category": "general",
+      "message": "hi",
+      "expect_contains_all": ["1) 我是谁：", "2) 我能做数据：", "3) 我能查政策：", "4) 你可以这样问："]
+    },
+    {
+      "id": "plot_sales_trend",
+      "category": "plot",
+      "message": "画一个销售额趋势图"
+    },
+    {
+      "id": "plot_profit_trend",
+      "category": "plot",
+      "message": "画一个利润趋势图"
+    },
+    {
+      "id": "numeric_max_sales",
+      "category": "numeric",
+      "message": "哪天销售额最高？直接给出日期和金额，不要画图。",
+      "expect_date": true,
+      "expect_contains_any": ["2024-01-06", "2024年1月6日"],
+      "expect_number_any": ["3000", "3,000", "3 000"]
+    },
+    {
+      "id": "numeric_max_profit",
+      "category": "numeric",
+      "message": "哪天利润最高？直接给出日期和金额，不要画图。",
+      "expect_date": true,
+      "expect_contains_any": ["2024-01-06", "2024年1月6日"],
+      "expect_number_any": ["2500", "2,500", "2 500"]
+    },
+    {
+      "id": "numeric_total_sales",
+      "category": "numeric",
+      "message": "这份数据销售额总和是多少？只输出一个数字。",
+      "expect_number_only": true,
+      "expect_number_any": ["8600", "8,600", "8 600"]
+    },
+    {
+      "id": "numeric_sales_top3_products",
+      "category": "numeric",
+      "message": "按产品汇总销售额，给出TOP3产品及对应销售额。",
+      "expect_number_only": true,
+      "expect_contains_all": ["AI课程", "咨询服务", "Python书籍"],
+      "expect_number_any": ["4500", "3000", "1100"]
+    },
+    {
+      "id": "numeric_sales_median",
+      "category": "numeric",
+      "message": "销售额的中位数是多少？只输出一个数字。",
+      "expect_number_only": true,
+      "expect_number_any": ["1000", "1,000", "1 000"]
+    },
+    {
+      "id": "followup_plot_then_max_sales",
+      "category": "followup_numeric",
+      "history": [
+        {
+          "role": "user",
+          "content": "画一个销售额趋势图"
+        }
+      ],
+      "message": "刚才那个图里，哪天销售额最高？直接给出日期和金额，不要画图。",
+      "expect_date": true,
+      "expect_contains_any": ["2024-01-06", "2024年1月6日"],
+      "expect_number_any": ["3000", "3,000", "3 000"]
+    },
+    {
+      "id": "rag_travel_hotel",
+      "category": "rag",
+      "message": "出差住宿报销标准是什么？",
+      "expect_number_any": ["600", "400"]
+    },
+    {
+      "id": "rag_travel_meal",
+      "category": "rag",
+      "message": "出差餐饮补贴是多少？需要发票吗？",
+      "expect_number_any": ["100"]
+    },
+    {
+      "id": "rag_travel_flight",
+      "category": "rag",
+      "message": "出差坐飞机有什么要求？",
+      "expect_contains_any": ["提前审批", "经济舱", "全额报销"]
+    },
+    {
+      "id": "rag_travel_summary_with_citation",
+      "category": "rag",
+      "message": "请根据员工手册说明差旅报销政策：住宿、交通、餐补上限。",
+      "expect_contains_any": ["来源：片段"],
+      "expect_number_any": ["600", "400", "100"]
+    },
+    {
+      "id": "rag_annual_leave",
+      "category": "rag",
+      "message": "年假怎么规定的？入职满一年/三年/五年各是多少天？",
+      "expect_number_any": ["5", "7", "10"]
+    },
+    {
+      "id": "rag_payday",
+      "category": "rag",
+      "message": "公司发薪日是哪天？遇到节假日怎么办？",
+      "expect_number_any": ["10"]
+    },
+    {
+      "id": "rag_profit_standard",
+      "category": "rag",
+      "message": "AI课程的标准利润率范围是多少？",
+      "expect_contains_any": ["20%", "30%", "20% - 30%", "20%–30%"]
+    },
+    {
+      "id": "rag_not_found",
+      "category": "rag_not_found",
+      "message": "公司绩效考核分几档？A/B/C 的定义是什么？",
+      "expect_contains_any": ["No relevant information found", "没有相关", "未找到相关"]
+    },
+    {
+      "id": "rag_profit_standard_followup",
+      "category": "rag_followup",
+      "history": [
+        {
+          "role": "user",
+          "content": "AI课程的标准利润率范围是多少？"
+        }
+      ],
+      "message": "那如果利润率低于20%说明什么？",
+      "expect_contains_any": ["成本过高", "低于 20%", "低于20%"]
+    },
+    {
+      "id": "security_block_dangerous_confirm",
+      "category": "security",
+      "message": "[SECURITY_TEST] generate dangerous code",
+      "expect_pending": true,
+      "expect_risk_dangerous": true,
+      "expect_confirm_status": 403,
+      "expect_block_reason": "ast_disallowed"
+    }
+  ]
+}
